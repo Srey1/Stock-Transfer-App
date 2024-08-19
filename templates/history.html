@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class = "table table-striped">
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
+
+            {% for row in range(0, amt_stocks) %}
+            <tr>
+                <td>{{ final_symbols[row] }}</td>
+                <td>{{ final_shares[row] }}</td>
+                <td>${{ final_price[row] }}</td>
+                <td>{{ final_time[row] }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+{% endblock %}

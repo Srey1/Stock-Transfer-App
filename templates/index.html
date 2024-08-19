@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <table class = "table table-striped">
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+
+            {% for row in range(0, amt_stocks) %}
+            <tr>
+                <td>{{ final_symbols[row] }}</td>
+                <td>{{ final_names[row] }}</td>
+                <td>{{ final_shares[row] }}</td>
+                <td>${{ final_prices[row] }}</td>
+                <td>${{ final_values[row] }}</td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td>Cash</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>${{ savings }}</td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><b>{{ true_value }}</b></td>
+            </tr>
+        </table>
+{% endblock %}
